@@ -1,3 +1,8 @@
+#para gerara o executavel do app:
+#pip instal pyinstaççer --> para gerar o executavel
+#pip instal pillow --> para poder gerar o icone
+#flet pack NOME_ARQUIVO_PRINCIPAL.py --icon NOME_DO_ICONE.png
+
 #biblioteca
 import flet as ft
 
@@ -11,26 +16,26 @@ def main(page: ft.Page):
         imc = peso.value / (altura.value ** 2)
 
         if imc <= 16.9:
-            resultado.value = 'Você esta muito abaixo do peso, procure ajuda '
+            resultado.value = 'Você está muito abaixo do peso, procure ajuda!'
         elif imc < 18.5:
-            resultado.value = 'Voce esta baixo do peso '
+            resultado.value = 'Você esta baixo do peso '
         elif imc < 25:
             resultado.value = 'Voce esta em seu peso ideal, parabens. '
         elif imc < 30:
             resultado.value = 'Voce esta acima do seu peso ideal '
         elif imc > 35:
-            resultado.value = 'Voce esta obeso '
+            resultado.value = 'Você está obeso'
         elif imc < 40:
-            resultado.value ='Atencao, voce esta com obsidade de nivel 2 '
+            resultado.value ='Atencao, voce esta com obsidade de nivel 2'
         else:
-            resultado.value = 'Voce esta com obesidade Morbida, procure ajuda URGENTE! '
+            resultado.value = 'Voce esta com obesidade Morbida, procure ajuda URGENTE!'
 
         resultado.value += f'{imc:.2f}'
 
         page.update()
 
 
-    page.title = ''
+    page.title = 'Indice de Massa Corporal'
     page.scroll = 'daptive'
     page.theme_mode = ft.ThemeMode.LIGHT
 
@@ -43,7 +48,7 @@ def main(page: ft.Page):
     
     page.add(
         ft.Row(
-            [ft.Text('Calculo de IMC',size = 40, weight='bold',color='purple')],
+            [ft.Text('Calculadora de IMC',size = 40, weight='bold',color='purple')],
             alignment=ft.MainAxisAlignment.CENTER
         ),
         ft.Row(
